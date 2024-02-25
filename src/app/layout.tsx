@@ -1,8 +1,25 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Roboto, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import LeftSidebar from "@/components/LeftSidebar";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-inter",
+});
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-spaceGrotesk",
+});
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+  variable: "--font-roboto",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +33,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} ${roboto.variable}} min-w-[350px]`}
+      >
+        <Navbar />
+        <main className=" bg-gray-800 overflow-hidden">
+          <div className="flex">
+            <LeftSidebar />
+            <section className=" flex min-h-screen flex-1 flex-col px-6 pb-6 pt-36 max-md:pb-14 sm:px-14">
+              <div className=" mx-auto w-full">{children}</div>
+            </section>
+          </div>
+        </main>
+        <Footer />
+      </body>
     </html>
   );
+}
+{
+  /* <main className=" background-light850_dark100 relative">
+  <Navbar />
+  <div className=" flex">
+    <LeftSidebar />
+
+    <section className=" flex min-h-screen flex-1 flex-col px-6 pb-6 pt-36 max-md:pb-14 sm:px-14">
+      <div className=" mx-auto w-full max-w-5xl">{children}</div>
+    </section>
+    <RightSidebar />
+  </div>
+  <Toaster />
+</main>; */
 }

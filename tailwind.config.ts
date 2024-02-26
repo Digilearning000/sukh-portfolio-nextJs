@@ -19,6 +19,7 @@ const config = {
     },
     extend: {
       colors: {
+        "icy-white": "#C7D2ED",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -58,6 +59,7 @@ const config = {
         inter: ["var(--font-inter)"],
         spaceGrotesk: ["var(--font-spaceGrotesk)"],
         roboto: ["var(--font-roboto)"],
+        josefinSans: ["var(--font-josefinSans)"],
       },
       borderRadius: {
         lg: "var(--radius)",

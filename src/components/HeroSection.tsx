@@ -1,7 +1,78 @@
+"use client";
 import React from "react";
+import Image from "next/image";
+import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const HeroSection = () => {
-  return <div>HeroSection</div>;
+  return (
+    <section className="lg:py-16">
+      <div className="grid grid-cols-1 sm:grid-cols-12">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
+        >
+          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C7D2ED] to-[#8DA9A8]">
+              Hello, I&apos;m{" "}
+            </span>
+            <br></br>
+            <TypeAnimation
+              sequence={[
+                "Sukhmilan Singh",
+                2000,
+                "Web Developer",
+                2000,
+                "Shopify Dev",
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+          </h1>
+          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+            Passionate Full Stack Next.js Developer | Proficient in React,
+            TypeScript, MongoDB | Crafting seamless web experiences with
+            Tailwind CSS | Shopify Integration | Let's Connect.
+          </p>
+          <div className="flex gap-10 mt-4">
+            <Link
+              href="/#contact"
+              className="text-mintGreen font-inter text-base font-normal text-center tracking-widest leading-[200.2%] border-2 border-mintGreen rounded-md py-2 px-8 mt-8 hover:bg-[#7b8d8d61]"
+            >
+              Hire Me
+            </Link>
+            <Link
+              href="/"
+              className="text-mintGreen font-inter text-base font-normal text-center tracking-widest leading-[200.2%] border-2 border-mintGreen rounded-md py-2 px-8 mt-8 hover:bg-[#7b8d8d61]"
+            >
+              Download CV
+            </Link>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-4 place-self-center mt-4 lg:mt-0"
+        >
+          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
+            <Image
+              src="/img.jpeg"
+              alt="hero image"
+              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 bg-clip-border"
+              width={300}
+              height={300}
+            />
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
 };
 
 export default HeroSection;

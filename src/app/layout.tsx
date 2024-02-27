@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${roboto.variable} ${josefinSans.variable}} min-w-[350px] text-icy-white overflow-hidden`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${roboto.variable} ${josefinSans.variable}} min-w-[350px] text-icy-white  overflow-hidden`}
       >
         {children}
       </body>
